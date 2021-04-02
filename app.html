@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title> VIDEO TRANSCRIPTION</title>
+        <link rel="stylesheet" href="app.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shadows+Into+Light">
+ 
+
+    </head>
+    <body>
+        <h1 id="tittle" style="font-family:'Courier New', Courier, monospace; text-align:center;">INTERVIEW YOURSELF</h1>
+
+        <div id="parent" class="container">
+
+          <!-- 1  -->
+          <div class="col-sm-8 column">
+
+            <!--            frame for web cam-->
+            <video autoplay="true" id="videoElement"></video>
+            
+          </div>
+          <!-- 2  -->
+          <div class="col-sm-4 column bg-alt input" >
+
+            <textarea id="textbox"  class="form-content" rows="16" cols="35" style="font-family: 'Courier New', Courier, monospace;"> </textarea>
+            <!-- 2.a -> to record answer by speech to text api -->
+            <button id="start-btn" class="btn btn-danger btn-block"> Start Answering</button>
+
+            <!-- 2.b -->
+            <div class="row" >
+                <!-- 2.b.1 -> to submit the answer for context analyses -->
+                <div class="col"> <button id="submit-btn" class="btn btn-danger btn-block"> Submit</button></div>
+                <!-- 2.b.2 -> to reset the answer in input area -->
+                <div class="col"> 
+                  <button id="reset-btn" class="btn btn-danger btn-block" 
+                  onclick="document.getElementById('textbox').value = ''"> Reset</button>
+                </div>    
+            </div>
+        
+          </div>
+
+          
+
+        </div>
+
+         <!--Context --- QnA-->
+        <div class="content " id="QnA">
+          <input type="text" id="myQuestion" value="What is your name?" style="float: left;">
+          <button class="btn btn-danger btn-block" id="nextQuestion">Next Question</button> 
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="speech.js"></script>
+        <script src="camera.js"></script>
+        
+
+
+    </body>
+
+
+</html>
